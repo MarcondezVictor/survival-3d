@@ -6,6 +6,12 @@ public class PlayerInteraction : MonoBehaviour
     [SerializeField] private Camera playerCamera;
     [SerializeField] private float interactRange = 5f;
 
+    private Inventory inventory;
+
+    private void Awake()
+    {
+        inventory = GetComponent<Inventory>();
+    }
     void Start()
     {
         
@@ -21,6 +27,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (hit.collider.CompareTag("Interactable"))
                 {
+                    inventory.Add(hit.collider.name);
                     Destroy(hit.collider.gameObject);
                 }
                 else
