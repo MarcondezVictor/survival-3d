@@ -25,14 +25,14 @@ public class PlayerInteraction : MonoBehaviour
 
             if (Physics.Raycast(ray, out RaycastHit hit, interactRange))
             {
-                if (hit.collider.CompareTag("Interactable"))
+                if (hit.collider.TryGetComponent(out ResourceNode node))
                 {
-                    inventory.Add(hit.collider.name);
-                    Destroy(hit.collider.gameObject);
+                    string yielded = node.Harvest();
+                    inventory.Add(yielded);
                 }
                 else
                 {
-                    Debug.Log("Not interactable: " + hit.collider.name);
+                    Debug.Log("Not harvestable: " + hit.collider.name);
                 }
             }
             else
