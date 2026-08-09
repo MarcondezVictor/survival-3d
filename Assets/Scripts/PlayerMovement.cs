@@ -5,6 +5,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
     [SerializeField] private float gravity = -9.81f;
+    [SerializeField] private float jumpHeight = 1.5f;
 
     private CharacterController controller;
     private float verticalVelocity;
@@ -24,6 +25,11 @@ public class PlayerMovement : MonoBehaviour
 
         if (controller.isGrounded && verticalVelocity < 0f)
             verticalVelocity = -2f;
+
+        if (controller.isGrounded && Input.GetButtonDown("Jump"))
+        {
+            verticalVelocity = Mathf.Sqrt(jumpHeight * -2f * gravity);
+        }
 
         verticalVelocity += gravity * Time.deltaTime;
 
