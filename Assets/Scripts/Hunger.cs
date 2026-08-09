@@ -21,4 +21,10 @@ public class Hunger : MonoBehaviour
 
         hungerBar.fillAmount = currentHunger / maxHunger;
     }
+
+    public void Restore(float amount)
+    {
+        currentHunger += amount;
+        currentHunger = Mathf.Clamp(currentHunger, 0f, maxHunger);
+    }
 }
