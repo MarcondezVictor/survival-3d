@@ -27,7 +27,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 if (hit.collider.TryGetComponent(out ResourceNode node))
                 {
-                    string yielded = node.Harvest();
+                    ItemData yielded = node.Harvest();
                     inventory.Add(yielded);
                 }
                 else

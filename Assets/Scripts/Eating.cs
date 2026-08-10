@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Eating : MonoBehaviour
 {
-    [SerializeField] private string foodItem = "Berry";
+    [SerializeField] private ItemData foodItem;
     [SerializeField] private float hungerPerFood = 25f;
 
     private Inventory inventory;

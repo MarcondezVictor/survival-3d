@@ -3,16 +3,18 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<string> items = new List<string>();
+    private List<ItemData> items = new List<ItemData>();
 
-    public void Add(string itemName)
+    private int selectedIndex = 0;
+
+    public void Add(ItemData itemName)
     {
         items.Add(itemName);
         Debug.Log($"Picked up {itemName}. Inventory now has {items.Count} item(s)"
             + string.Join(", ", items));
     }
 
-    public bool TryConsume(string itemName)
+    public bool TryConsume(ItemData itemName)
     {
         if (items.Remove(itemName))
         {
@@ -21,8 +23,24 @@ public class Inventory : MonoBehaviour
         }
         return false;
     }
-    void Start()
+    
+    public ItemData SelectedItem
     {
-        
+        get
+        {
+            if (items.Count == 0) return null;
+            selectedIndex = Mathf.Clamp(selectedIndex, 0, items.Count - 1);
+            return items[selectedIndex];
+        }
+    }
+
+    public void Select(int index)
+    {
+        selectedIndex = index;
+        if (items.Count > 0)
+        {
+            selectedIndex = Mathf.Clamp(selectedIndex, 0, items.Count - 1);
+            Debug.Log($"Selected: {SelectedItem.itemName}");
+        }
     }
 }

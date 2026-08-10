@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ResourceNode : MonoBehaviour
 {
-    [SerializeField] private string resourceType = "Wood";
+    [SerializeField] private ItemData resource;
     [SerializeField] private int totalAmount = 3;
 
     private int remaining;
@@ -14,17 +14,17 @@ public class ResourceNode : MonoBehaviour
 
     // Returns the resource type yielded by one hit.
     // Depletes the node; destroys it when empty.
-    public string Harvest()
+    public ItemData Harvest()
     {
         remaining--;
 
-        Debug.Log($"Harvested 1 {resourceType}. {remaining} left on this node.");
+        Debug.Log($"Harvested 1 {resource.itemName}. {remaining} left on this node.");
 
         if (remaining <= 0)
         {
             Destroy(gameObject);
         }
 
-        return resourceType;
+        return resource;
     }
 }
