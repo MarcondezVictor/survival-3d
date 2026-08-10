@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0)) // left click
+        if (Input.GetKeyDown(KeyCode.E)) 
         {
             Ray ray = new Ray(playerCamera.transform.position, playerCamera.transform.forward);
 

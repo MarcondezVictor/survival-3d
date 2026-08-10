@@ -22,7 +22,7 @@ public class GridPlacement : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, placeRange))
         {
-            if (Input.GetMouseButtonDown(0))
+            if (Input.GetMouseButtonDown(1))
             {
                 Vector3 snapped = SnapToGrid(hit.point);
 
@@ -33,7 +33,7 @@ public class GridPlacement : MonoBehaviour
                 }                
             }
 
-            if (Input.GetMouseButtonDown(1))
+            if (Input.GetMouseButtonDown(0))
             {
                 if (hit.collider.CompareTag("PlacedBlock"))
                 {

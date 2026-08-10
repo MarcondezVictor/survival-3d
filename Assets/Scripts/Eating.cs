@@ -16,7 +16,7 @@ public class Eating : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.F))
         {
             if (inventory.TryConsume(foodItem))
             {
