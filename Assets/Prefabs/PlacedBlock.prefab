@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4775571325521686726}
   m_Layer: 0
   m_Name: PlacedBlock
-  m_TagString: Interactable
+  m_TagString: PlacedBlock
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
