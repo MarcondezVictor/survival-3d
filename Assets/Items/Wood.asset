@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f267dd17bb55db742bf1e6479ba33349, type: 3}
   m_Name: Wood
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: New Item
+  itemName: Wood
   isFood: 0
   hungerRestored: 25
-  isPlaceable: 0
-  blockPrefab: {fileID: 0}
+  isPlaceable: 1
+  blockPrefab: {fileID: 9038690283249533181, guid: 5dd580520bc150d4494836aca9acea2a, type: 3}

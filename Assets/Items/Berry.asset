@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f267dd17bb55db742bf1e6479ba33349, type: 3}
   m_Name: Berry
   m_EditorClassIdentifier: Assembly-CSharp::ItemData
-  itemName: New Item
-  isFood: 0
+  itemName: Berry
+  isFood: 1
   hungerRestored: 25
   isPlaceable: 0
   blockPrefab: {fileID: 0}

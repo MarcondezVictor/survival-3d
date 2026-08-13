@@ -22,17 +22,6 @@ public class GridPlacement : MonoBehaviour
 
         if (Physics.Raycast(ray, out RaycastHit hit, placeRange))
         {
-            if (Input.GetMouseButtonDown(1))
-            {
-                Vector3 snapped = SnapToGrid(hit.point);
-
-                if (!occupiedCells.Contains(snapped))
-                {
-                    Instantiate(blockPrefab, snapped, Quaternion.identity);
-                    occupiedCells.Add(snapped);
-                }                
-            }
-
             if (Input.GetMouseButtonDown(0))
             {
                 if (hit.collider.CompareTag("PlacedBlock"))
@@ -42,6 +31,18 @@ public class GridPlacement : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool TryPlace(GameObject prefab, Vector3 hitPoint)
+    {
+        Vector3 snapped = SnapToGrid(hitPoint);
+
+        if (occupiedCells.Contains(snapped))
+            return false;
+
+        Instantiate(prefab, snapped, Quaternion.identity);
+        occupiedCells.Add(snapped);
+        return true;
     }
 
     private Vector3 SnapToGrid(Vector3 worldPoint)
