@@ -13,4 +13,7 @@ public class ItemData : ScriptableObject
     [Header("Placeable")]
     public bool isPlaceable;
     public GameObject blockPrefab;
+
+    [Header("Visuals")]
+    public GameObject heldPrefab;
 }
