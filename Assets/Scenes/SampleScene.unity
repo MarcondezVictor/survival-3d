@@ -255,8 +255,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 107828261}
+  - component: {fileID: 107828269}
   - component: {fileID: 107828268}
-  - component: {fileID: 107828267}
   - component: {fileID: 107828266}
   - component: {fileID: 107828265}
   - component: {fileID: 107828264}
@@ -457,20 +457,6 @@ MonoBehaviour:
   maxHunger: 100
   drainPerSecond: 2
   hungerBar: {fileID: 1698271885}
---- !u!114 &107828267
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 107828256}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f2cd5d059b7372a4195b6cc738774e51, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::Eating
-  foodItem: {fileID: 11400000, guid: 5cff03131de48b94991c500d14d49cdc, type: 2}
-  hungerPerFood: 25
 --- !u!114 &107828268
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -483,6 +469,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c8b89580bbbce448b8dc03eb27b70ac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::HotbarSelection
+--- !u!114 &107828269
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 107828256}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7681115efe6422844b31f612219a0c1c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ItemUse
+  playerCamera: {fileID: 330585545}
+  placeRange: 8
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0

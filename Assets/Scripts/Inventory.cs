@@ -6,6 +6,7 @@ public class Inventory : MonoBehaviour
     private List<ItemData> items = new List<ItemData>();
 
     private int selectedIndex = 0;
+    public int SelectedIndex => selectedIndex;
 
     public void Add(ItemData itemName)
     {
