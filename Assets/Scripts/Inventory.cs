@@ -8,6 +8,8 @@ public class Inventory : MonoBehaviour
     private int selectedIndex = 0;
     public int SelectedIndex => selectedIndex;
 
+    public IReadOnlyList<ItemData> Items => items;
+
     public void Add(ItemData itemName)
     {
         items.Add(itemName);
