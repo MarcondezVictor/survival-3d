@@ -15,14 +15,14 @@ public class HotbarUI : MonoBehaviour
     private void Update()
     {
         int selected = inventory.SelectedIndex;
-        IReadOnlyList<ItemData> items = inventory.Items;
+        IReadOnlyList<ItemStack> stacks = inventory.Stacks;
 
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i].color = (i == selected) ? selectedColor : normalColor;
 
-            if (i < items.Count)
-                labels[i].text = items[i].itemName;
+            if (i < stacks.Count)
+                labels[i].text = $"{stacks[i].item.itemName} x{stacks[i].count}";
             else
                 labels[i].text = "";
         }

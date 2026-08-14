@@ -17,3 +17,4 @@ MonoBehaviour:
   hungerRestored: 25
   isPlaceable: 1
   blockPrefab: {fileID: 9038690283249533181, guid: 5dd580520bc150d4494836aca9acea2a, type: 3}
+  heldPrefab: {fileID: 6686613118599926422, guid: a3d408b056e9c914b98144a600d2e5ea, type: 3}

@@ -3,46 +3,61 @@ using UnityEngine;
 
 public class Inventory : MonoBehaviour
 {
-    private List<ItemData> items = new List<ItemData>();
+    private List<ItemStack> stacks = new List<ItemStack>();
 
     private int selectedIndex = 0;
+
+    public IReadOnlyList<ItemStack> Stacks => stacks;
     public int SelectedIndex => selectedIndex;
 
-    public IReadOnlyList<ItemData> Items => items;
 
-    public void Add(ItemData itemName)
+
+    public void Add(ItemData item)
     {
-        items.Add(itemName);
-        Debug.Log($"Picked up {itemName}. Inventory now has {items.Count} item(s)"
-            + string.Join(", ", items));
+        ItemStack existing = stacks.Find(s => s.item == item);
+
+        if (existing != null)
+            existing.count++;
+        else
+            stacks.Add(new ItemStack(item, 1));
+
+        Debug.Log($"Picked up {item.itemName}. Stacks: {stacks.Count}");
     }
 
-    public bool TryConsume(ItemData itemName)
+    public bool TryConsume(ItemData item)
     {
-        if (items.Remove(itemName))
-        {
-            Debug.Log($"Consumed {itemName}. {items.Count} item(s) left.");
-            return true;
-        }
-        return false;
+        ItemStack existing = stacks.Find(s => s.item == item);
+
+        if (existing == null)
+            return false;
+
+        existing.count--;
+
+        if (existing.count <= 0)
+            stacks.Remove(existing);
+
+       
+        Debug.Log($"Consumed {item.itemName}. {stacks.Count} item(s) left.");
+        return true;
+        
     }
     
     public ItemData SelectedItem
     {
         get
         {
-            if (items.Count == 0) return null;
-            selectedIndex = Mathf.Clamp(selectedIndex, 0, items.Count - 1);
-            return items[selectedIndex];
+            if (stacks.Count == 0) return null;
+            selectedIndex = Mathf.Clamp(selectedIndex, 0, stacks.Count - 1);
+            return stacks[selectedIndex].item;
         }
     }
 
     public void Select(int index)
     {
         selectedIndex = index;
-        if (items.Count > 0)
+        if (stacks.Count > 0)
         {
-            selectedIndex = Mathf.Clamp(selectedIndex, 0, items.Count - 1);
+            selectedIndex = Mathf.Clamp(selectedIndex, 0, stacks.Count - 1);
             Debug.Log($"Selected: {SelectedItem.itemName}");
         }
     }
