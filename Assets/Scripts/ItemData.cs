@@ -16,4 +16,5 @@ public class ItemData : ScriptableObject
 
     [Header("Visuals")]
     public GameObject heldPrefab;
+    public Sprite icon;
 }
