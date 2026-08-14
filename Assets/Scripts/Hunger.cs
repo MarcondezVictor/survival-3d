@@ -9,6 +9,8 @@ public class Hunger : MonoBehaviour
 
     private float currentHunger;
 
+    public float Normalized => currentHunger / maxHunger;
+
     private void Awake()
     {
         currentHunger = maxHunger;
