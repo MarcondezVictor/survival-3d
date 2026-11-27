@@ -66,8 +66,9 @@
 *.physicMaterial        unity-yaml
 *.physicsMaterial2D     unity-yaml
 
-# Exclude from GitHub stats and diffs: third-party plugins, packages lock file
+# Exclude from GitHub stats and diffs: third-party plugins and packages, packages lock file
 Assets/Plugins/**           linguist-generated
+Assets/TextMesh[[:space:]]Pro/** linguist-vendored
 Packages/packages-lock.json linguist-generated
 
 # Unity LFS
