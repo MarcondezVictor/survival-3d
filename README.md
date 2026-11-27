@@ -66,4 +66,4 @@ Assets/
 
 ---
 
-**Victor Hugo** — [github.com/MarcondezVictor](https://github.com/MarcondezVictor)
+**Victor Hugo Lopes** — [github.com/MarcondezVictor](https://github.com/MarcondezVictor)
