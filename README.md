@@ -1,5 +1,7 @@
 # Survival 3D
 
+![Gameplay: exploring the low-poly forest, gathering resources and placing blocks](docs/screenshots/gameplay.gif)
+
 ### A first-person survival game prototype built with Unity.
 
 ![Unity](https://img.shields.io/badge/Unity-6-000000?logo=unity&logoColor=white)
